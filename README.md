@@ -1,5 +1,13 @@
 [wordcloud-rs](https://github.com/Inspirateur/wordcloud-rs) を使い `./users/<github-user-name>/list.txt` に列挙されているアイテムを収集し Wordcloud を作るプログラムを格納する．
 
+# Latest Wordcloud
+
+`main` ブランチが更新されるたびに GitHub Actions がワードクラウドを生成し，[Latest Wordcloud リリース](https://github.com/MS10-DP-ISSP/favorite-food-collection/releases/tag/latest) に公開する．
+
+![Latest wordcloud](https://github.com/MS10-DP-ISSP/favorite-food-collection/releases/download/latest/wordcloud.png)
+
+直接ダウンロード: https://github.com/MS10-DP-ISSP/favorite-food-collection/releases/download/latest/wordcloud.png
+
 # Setup
 
 ## Install Rust
@@ -35,7 +43,7 @@ PS> rustc --version
 $ cargo run --release -- favorite-food --output wordcloud.png --width 1024 --height 1024
 ```
 
-`users/*/list.txt` を収集し，デフォルトで `output/favorite-food.png` にワードクラウドを出力する．
+`users/*/list.txt` を収集し，ワードクラウド PNG を出力する．
 
 ### オプション
 
@@ -109,4 +117,3 @@ $ git commit -m "add my favorite foods"
 ### 日本語フォントについて
 
 日本語の表示には，OS にインストールされた日本語対応フォント（ヒラギノ角ゴシック，Noto Sans CJK など）を自動的に使用する．フォントが見つからない環境では文字化けする可能性がある．
-# favorite-food-collection
