@@ -102,7 +102,7 @@ $ git commit -m "add my favorite foods"
 
 5. 自分の GitHub リポジトリに push する．
 
-6. GitHub の画面から本家リポジトリ（`terasakisatoshi/favorite-food-collection`）に Pull Request を作成する．
+6. GitHub の画面から本家リポジトリ（`MS10-DP-ISSP/favorite-food-collection`）に Pull Request を作成する．
 
 複数人が同じ食べ物を書いた場合，出現回数が多いほどワードクラウド上で大きく表示される．
 
