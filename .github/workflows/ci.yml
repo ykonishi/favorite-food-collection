@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  wordcloud:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: swatinem/rust-cache@v2
+
+      - name: Install Japanese fonts
+        run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
+
+      - name: Run tests
+        run: cargo test --release
+
+      - name: Generate wordcloud
+        run: cargo run --release -- favorite-food --output wordcloud.png --width 1024 --height 1024
+
+      - name: Verify wordcloud.png
+        run: |
+          test -f wordcloud.png
+          test -s wordcloud.png
+          file wordcloud.png | grep -q 'PNG image data'
