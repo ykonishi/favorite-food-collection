@@ -29,10 +29,10 @@ PS> rustc --version
 
 ## Generate Wordcloud
 
-**リポジトリのルートディレクトリ**（`users/` がある場所）で実行する．
+**リポジトリのルートディレクトリ**（この README.md がある場所）で実行する．
 
 ```sh
-$ cargo run --release -- favorite-food
+$ cargo run --release -- favorite-food --output wordcloud.png --width 1024 --height 1024
 ```
 
 `users/*/list.txt` を収集し，デフォルトで `output/favorite-food.png` にワードクラウドを出力する．
