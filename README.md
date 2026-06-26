@@ -12,6 +12,8 @@
 
 ## Install Rust
 
+このコードベースは Rust で書かれているが，Git の使い方のハンズオンをするにあたっては Rust のセットアップをする必要は**ない**.
+
 ### macOS / Linux
 
 [rustup](https://rustup.rs/) を使って Rust をインストールする．
@@ -27,6 +29,16 @@ $ rustc --version
 Visual C++ ビルドツールが必要な場合がある．
 
 1. https://visualstudio.microsoft.com/visual-cpp-build-tools/ に移動し Download Build Tools をクリックしてインストールする
+
+`WinGet` が使える環境では下記のコマンドで導入することもできる．
+
+```PS
+winget install -e --id Microsoft.VisualStudio.2022.BuildTools `
+  --accept-source-agreements `
+  --accept-package-agreements `
+  --override "--wait --passive --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
+```
+
 2. https://learn.microsoft.com/ja-jp/windows/dev-environment/rust/setup?tabs=winget の説明に従う
 
 ```ps
