@@ -90,6 +90,13 @@ $ git clone git@github.com:<your-github-user-name>/favorite-food-collection.git
 $ cd favorite-food-collection
 ```
 
+次に Git のブランチを作ります．ブランチ名は何でもいいのですが，ここでは `add-<your-github-user-name>` のようなフォーマットで
+作ることにします．
+
+```sh
+$ git switch -c add-<your-github-user-name>
+```
+
 3. 自分の GitHub ユーザー名のディレクトリを作り，好きな食べ物を列挙する．
 
 ```sh
@@ -113,14 +120,31 @@ $ touch users/<your-github-user-name>/list.txt
 炒飯
 ```
 
-4. 変更を git に追加して commit する．
+4. 変更を `git` コマンドで追加して commit する．
+
+はじめて `git` を触る方は下記の作業をお願いします．
+
+```sh
+$ git config --global user.name "<Your Name>"
+$ git config --global user.email "<Your email address>"
+```
+
+上記の作業で登録した `<Your Name>` や `<Your email address>` は「誰が」コミット（ソースの追加・削除・変更）したかというバージョン管理における記録のために用いられます．
+
+続けて次の作業をします．
 
 ```sh
 $ git add users/<your-github-user-name>/list.txt
 $ git commit -m "add my favorite foods"
 ```
 
+`<your-github-user-name>` は登録した GitHub アカウント名です．(`user.name "<Your Name>"` で指定した値とは独立の概念です．)
+
 5. 自分の GitHub リポジトリに push する．
+
+```
+git push origin add-<your-github-user-name>
+```
 
 6. GitHub の画面から本家リポジトリ（`MS10-DP-ISSP/favorite-food-collection`）に Pull Request を作成する．
 
